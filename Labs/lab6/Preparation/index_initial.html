@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            margin: 1vw;
+            color: black;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+        
+        .hidden {
+            background-color: black;
+        }
+
+        .show {
+            background-color: white;
+            font-size: 100px;
+            /* color: white; */
+        }
+
+        body{
+            padding: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <!-- div with flex 2 rows flex-wrap true -->
+    <div class="d-flex flex-row-center flex-wrap">
+        <div class="box blue hidden" id="1">blue</div>
+        <div class="box red hidden" id="2">red</div>        
+        <div class="box red hidden"  id="3">red</div>        
+        <div class="box blue hidden" id="4">blue</div>        
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ex42.css">
+    <script src="ex42.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset class="vertically">
+        <div class="horizontally">
+            <label for="grade">Βαθμος (0-10):</label>
+            <input type="text" name="grade" id="grade" size="1px">
+            <button type="button" onclick="works()">Εισαγωγη</button>
+            <button type="button" onclick="clearing()">Καθαρισμος</button>
+        </div>
+
+        <div class="horizontally">
+            <label for="mean">Μεση τιμη</label>
+            <input type="text" name="mean" id="mean" size="1px">
+            <label for="numberof">Πληθος βαθμων</label>
+            <input type="text" name="numberof" id="numberof" size="1px">
+        </div>
+
+        <p>Click Refresh (or Reload) to run the script again</p>
+        <p id="errors">Please Enter a number between 0 and 10</p>
+        
+    </fieldset>
+
+
+</body>
+
+</html>

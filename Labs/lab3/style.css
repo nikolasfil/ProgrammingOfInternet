@@ -1,0 +1,84 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  /* ορίζει font-size 1.8em και line-height 1.8 (άρα θα είναι 1.8 x {ό,τι είναι το font-size})*/
+  /* sets font-size to 1.8em and line-height to 1.8 (so it will be 1.8 x {whatever the font-size is})*/
+  font: 1.8em / 1.8 Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  font-size: 200%;
+  padding: 50px 20px;
+  /* δοκιμάστε να βγάλετε το auto... το 0 είναι το margin (εξωτερικό περιθώριο πάνω και κάτω) και το auto το εξ. περιώριο δεξιά και αριστερά.
+  auto= θα έχει το ίδιο margin δεξιά αριστερά, άρα θα φαίνεται στοιχισμένο στο κέντρο */
+  /* try taking out auto... 0 is the margin (outer margin top and bottom) and auto is the outer margin left and right.
+  auto= will have the same margin right to left, so it will appear centered */
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+nav {
+  background-color: black;
+  position: sticky;
+  top:0px;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  /* justify-content: flex-start; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  }
+
+.form-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+a:hover {
+  background-color: grey;
+  color: brown;
+}
+
+nav .selected a{  
+  background-color: grey;
+  color: red;
+  
+}
+
+
+
+.form-grid {
+  display: grid;
+  align-self: center;
+  padding: 10px;
+  grid-template-columns: 1fr 2fr;
+
+}
+
+.form-double-colspan {
+  grid-column: span 2;
+}
+
+article {
+  padding: 5%;
+  width: 90%;
+  align-self: center;
+}
+

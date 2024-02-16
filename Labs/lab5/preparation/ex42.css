@@ -1,0 +1,27 @@
+
+fieldset {
+    width: 400px;
+    height: 130px;
+}
+
+.horizontally{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.horizontally>* {
+    margin: 1px 1px;
+}
+
+
+.vertically{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#errors {
+    display: none;
+    color: red;
+}

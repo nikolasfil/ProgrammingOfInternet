@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input {} */
+    </style>
+</head>
+<body>
+    <h1><strong>Αιτηση εκδοσης πιστοποιητικου </strong></h1>
+    <form action="" >
+        <!-- method="get" -->
+        <fieldset>
+            <legend>Στοιχεία φοιτητή</legend>
+            <div>
+                <label for="label">Συμπληρωστε τα στοιχεια σας με ελληνικους χαρακτηρες</label><br><br>
+            </div>
+            <div>
+                <label for="name">Ονοματεπωνυμο</label><br>
+                <!-- διορθωση -->
+                <input type="text" name="fname" id="fnamein" placeholder="Ονομα">
+                <input type="text" name="lname" id="lnamein" placeholder="Επωνυμο">
+            </div>
+            <br>                
+            <div>
+                <label for="street">Στοιχεια διευθυνσης</label>
+                <br>
+                <input type="text" name="street" id="streetin" placeholder="Οδος και αριθμος" size="44px">
+                <br><br>
+                <!-- Διορθωση -->
+
+                <input type="text" name="city" id="cityin" placeholder="Πολη">
+                <input type="text" name="citycode" id="citycodein" placeholder="Ταχυδρομικος Κωδικας">
+            </div>
+            <br>
+            <div>
+                <label for="phone">Στοιχεια επικοινωνιας</label>
+                <br>
+                <!-- Διορθωση -->
+                <input type="text" name="phone" id="phonein" placeholder="Τηλεφωνο">
+                <input type="email" name="email" id="emailin" placeholder="Διευθυνση μειλ">
+            </div>
+            <br>
+            <div>
+                <label for="year">Ετος σπουδων</label>
+                <input type="radio" name="year" value="Α">Α    
+                <input type="radio" name="year" value="Β">Β
+                <input type="radio" name="year" value="Γ">Γ
+                <input type="radio" name="year" value="Δ">Δ
+                <input type="radio" name="year" value="Ε">Ε    
+                
+            </div>
+            <br>
+            <div>
+                <label for="am">Αριθμος Μητρωου</label><br>
+                <input type="number" name="am" min="0" max="9999999" step="1" placeholder="1050505">
+            </div>
+
+
+        </fieldset>
+        <fieldset>
+            <legend>Επιλεξτε πιστοποιητικο και τροπο παραλαβης</legend>
+            <br>
+            <select name="document">
+                <option value="uni">Βεβαιωση Φοιτησης</option>
+                <option value="diploma">Διπλωματικη</option>
+                <option value="grades">Αναλυτικη Βαθμολογια</option>
+            </select> 
+        </fieldset>
+        
+        <fieldset>
+            <legend>Παραλαβη Πιστοποιητικου</legend>
+            <input type="radio" name="type" value="γραμματεια">Παραλαβη απο γραμματεια <br>
+            <input type="radio" name="type" value="αποστολη">Αποστολη στη διευθυνση οικιας <br>    
+        <br>
+        <div>
+            <input type="submit" value="Υποβολη">
+        </div>
+    </form>
+</body>
+</html>

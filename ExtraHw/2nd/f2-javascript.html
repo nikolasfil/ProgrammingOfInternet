@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Εγγραφή</title>
+    <style type="text/css">
+        body {
+            font-family: helvetica, sans-serif;
+            font-size: 130%;
+        }
+
+        input {
+            padding: 5px 5px 12px 5px;
+            font-size: 25px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            width: 320px;
+        }
+
+        label {
+            position: relative;
+            top: 12px;
+            width: 200px;
+            float: left;
+        }
+
+        .form-element #phone,
+        .form-element #email {
+            /* #text color is red  */
+            color: red;
+        }
+
+        #wrapper {
+            width: 580px;
+            margin: 0 auto;
+        }
+
+        .form-element {
+            margin-bottom: 10px;
+        }
+
+        #submitButton {
+            width: 130px;
+            margin-left: 200px;
+            float: left;
+        }
+
+        #errorMessage {
+            color: red;
+            font-size: 90% !important;
+        }
+
+        #successMessage {
+            color: green;
+            font-size: 90% !important;
+            display: none;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="successMessage">Συγχαρητήρια.</div>
+        <div id="errorMessage"></div>
+        <div class="form-element">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="π.χ. yourname@gmail.com">
+        </div>
+        <div class="form-element">
+            <label for="phone">Τηλέφωνο</label>
+            <input type="text" name="phone" id="phone" placeholder="eg. 2610345678">
+        </div>
+        <div class="form-element">
+            <label for="password">Κωδικός</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="form-element">
+            <label for="passwordConfirm">Επιβεβαίωση Κωδικού</label>
+            <input type="password" name="passwordConfirm" id="passwordConfirm">
+        </div>
+        <div class="form-element">
+            <input type="submit" id="submitButton" value="Εγγραφή">
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        document.getElementById("email").addEventListener("keyup", function () {
+            coloringEmail(this.value);
+        });
+
+        document.getElementById("phone").addEventListener("keyup", function () {
+            coloringPhone(this.value);
+        });
+
+        document.getElementById("submitButton").addEventListener("click", check);
+
+
+        function isEmail(email) {
+            //συμπληρώστε εδώ τους απαραίτητους ελέγχους ορθότητας με χρήση javascript
+            // προτείνεται να χρησιμοποιήσετε regex
+            //Να έχουν συμπληρωθεί όλα τα πεδία, αν το πεδίο email, έχει μορφή email
+            // αν στο τηλέφωνο υπάρχουν μόνο αριθμοί,
+            // αν ο κωδικός και επιβεβαίωση να είναι ίδιοι
+            // να δώσετε κατάλληλο μήνυμα στην αρχή της σελίδας
+
+
+            // const emailRegex = new RegExp("^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+            const emailRegex = new RegExp("^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+
+            if (!emailRegex.test(email)) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        function isTelephone(phone) {
+            const phoneRegex = new RegExp("^[0-9]{10}$");
+            if (!phoneRegex.test(phone)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function coloringEmail(email) {
+            if (isEmail(email)) {
+                document.getElementById("email").style.color = 'green';
+            } else {
+                document.getElementById("email").style.color = 'red';
+            }
+        }
+
+        function coloringPhone(phone) {
+            if (isTelephone(phone)) {
+                document.getElementById("phone").style.color = 'green';
+            } else {
+                document.getElementById("phone").style.color = 'red';
+            }
+        }
+
+        function check() {
+
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let password = document.getElementById("password").value;
+            let passwordConfirm = document.getElementById("passwordConfirm").value;
+
+            let successMessage = document.getElementById("successMessage")
+            let errorMessage = document.getElementById("errorMessage")
+
+            successMessage.style.display = "none";
+            errorMessage.innerHTML = "";
+
+
+
+            if (email != "" && phone != "" && password != "" && passwordConfirm != "") {
+                if (isEmail(email)) {
+                    if (isTelephone(phone)) {
+                        if (password == passwordConfirm) {
+                            errorMessage.innerHTML = "";
+                            successMessage.style.display = "block";
+                            document.getElementById("email").style.color = 'green';
+                        } else {
+                            errorMessage.innerHTML = "Οι κωδικοί δεν ταιριάζουν";
+                        }
+                    } else {
+                        document.getElementById("errorMessage").innerHTML = "Πρέπει να συμπληρώσετε ένα έγκυρο τηλέφωνο";
+                    }
+
+                } else {
+                    document.getElementById("errorMessage").innerHTML = "Πρέπει να συμπληρώσετε ένα έγκυρο email";
+
+                }
+            } else {
+                errorMessage.innerHTML = "Πρέπει να συμπληρώσετε όλα τα πεδία";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

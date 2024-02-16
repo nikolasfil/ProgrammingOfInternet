@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  justify-content: center;
+  /* margin: auto; */
+  margin: 30px;
+  background-color: bisque;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 5px 5px 5px #888888;
+  border-radius: 10px;
+  /* margin: 200px; */
+  /* margin: 20px; */
+  width: 650px;
+  padding: 10px;
+}
+
+.done > span {
+  text-decoration: line-through;
+  color: gray;
+  text-decoration: ;
+}
+
+.title {
+  /* didn't do the italics  */
+  font-style: italic;
+
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px;
+}
+
+#item {
+  margin: 20px;
+  width: 50%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  /* border : 1px none black; */
+  border-bottom: 1px dashed black;
+  align-self: center;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  /* flex 2 columns  */
+  /* flex: 1 1 80%; */
+  margin: 10px;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+
+
+li > * {
+  margin: 0px 10px;
+}
+
+
+
+.odd {
+  background-color: #f2f2f2;
+}
+
+.statistics {
+  font-size: 75%;
+  text-align: right;
+  margin-right: 10px;
+}
+
+button {
+  /* text color grey */
+  color: gray;
+}
+
+.date {
+  color: grey;
+  font-size: 75%;
+}

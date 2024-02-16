@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>First Express</title>
+    </head>
+
+    <body>
+        <p><code>views/layouts/main.hbs:</code></p>
+        {{>header}}
+        {{>navbar}}
+        <div class="container">
+            {{{body}}}
+        </div>
+        {{> footer}}
+    </body>
+
+</html>
